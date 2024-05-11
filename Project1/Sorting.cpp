@@ -9,6 +9,43 @@ void PrintArray(int arr[], int size) {
 	std::cout << std::endl;
 }
 
+void InsertionSort01(int arr[], int size) {
+	if (size <= 1) {
+		return;
+	}
+	int val;
+	int j;
+	for (int i = 1; i < size; i++) {
+		val = arr[i];
+		for (j = i - 1; j >= 0; j--) {
+			if (arr[j] > val && j >= 0) {
+				arr[j + 1] = arr[j];
+			}
+			else {	
+				break;
+			}
+		}
+		arr[j+1] = val;
+	}
+}
+void InsertionSort02(int arr[], int size)
+{
+	int i, key, j;
+	for (i = 1; i < size; i++) {
+		key = arr[i];
+		j = i - 1;
+
+		// Move elements of arr[0..i-1],
+		// that are greater than key, 
+		// to one position ahead of their
+		// current position
+		while (j >= 0 && arr[j] > key) {
+			arr[j + 1] = arr[j];
+			j = j - 1;
+		}
+		arr[j + 1] = key;
+	}
+}
 
 void SelectionSort01(int arr[], int size) {
 	int min_index = 0;
