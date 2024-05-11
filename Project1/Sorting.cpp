@@ -9,6 +9,24 @@ void PrintArray(int arr[], int size) {
 	std::cout << std::endl;
 }
 
+
+void SelectionSort01(int arr[], int size) {
+	int min_index = 0;
+	for (int i = 0; i < size - 1; i++) {
+		min_index = i;
+		for (int j = i + 1; j < size; j++) {
+			if (arr[j] < arr[i]) {
+				min_index = j;
+			}
+		}
+		if (min_index != i) {
+			int temp = arr[i];
+			arr[i] = arr[min_index];
+			arr[min_index] = temp;
+		}
+	}
+}
+
 void BubbleSort01(int arr[], int size) {
 	for (int i = 0; i < size; i++) {
 		for (int j = 0; j < size - 1; j++) {
