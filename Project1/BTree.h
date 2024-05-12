@@ -18,4 +18,5 @@ int HeightOfBTree(TreeNode* RootNode);
 void PrintNodesAtKDistance(TreeNode* RootNode, int k);
 void PrintLevelOrderTraversal(TreeNode* RootNode);
 int SizeOfBinaryTree(TreeNode* RootNode);
-int MaximumFromBTree(TreeNode* RootNode);
+int MaximumFromBTree01(TreeNode* RootNode);
+int MaximumFromBTree02(TreeNode* RootNode);

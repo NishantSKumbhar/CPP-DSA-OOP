@@ -83,7 +83,7 @@ int SizeOfBinaryTree(TreeNode* RootNode) {
 	return 1 + (SizeOfBinaryTree(RootNode->LeftNode) + SizeOfBinaryTree(RootNode->RightNode));
 }
 
-int MaximumFromBTree(TreeNode* RootNode) {
+int MaximumFromBTree01(TreeNode* RootNode) {
 	int maxium = INT_MIN;
 	if (RootNode == nullptr) {
 		return 0;
@@ -110,7 +110,14 @@ int MaximumFromBTree(TreeNode* RootNode) {
 	return maxium;
 
 }
-
+int MaximumFromBTree02(TreeNode* RootNode) {
+	if (RootNode == nullptr) {
+		return INT_MIN;
+	}
+	else {
+		return std::max(RootNode->key, std::max(MaximumFromBTree02(RootNode->LeftNode), MaximumFromBTree02(RootNode->RightNode)));
+	}
+}
 /*
 	TreeNode* RootNode = new TreeNode(10);
 	RootNode->LeftNode = new TreeNode(20);
