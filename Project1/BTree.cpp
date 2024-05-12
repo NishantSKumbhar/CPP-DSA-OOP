@@ -83,6 +83,34 @@ int SizeOfBinaryTree(TreeNode* RootNode) {
 	return 1 + (SizeOfBinaryTree(RootNode->LeftNode) + SizeOfBinaryTree(RootNode->RightNode));
 }
 
+int MaximumFromBTree(TreeNode* RootNode) {
+	int maxium = INT_MIN;
+	if (RootNode == nullptr) {
+		return 0;
+	}
+
+	std::queue<TreeNode*> q;
+	q.push(RootNode);
+
+	while (!q.empty())
+	{
+		TreeNode* current = q.front();
+		if (current->key > maxium) {
+			maxium = current->key;
+		}
+		q.pop();
+		if (current->LeftNode) {
+			q.push(current->LeftNode);
+		}
+		if (current->RightNode) {
+			q.push(current->RightNode);
+		}
+	}
+
+	return maxium;
+
+}
+
 /*
 	TreeNode* RootNode = new TreeNode(10);
 	RootNode->LeftNode = new TreeNode(20);

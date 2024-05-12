@@ -69,6 +69,8 @@ int main() {
 	PrintLevelOrderTraversal(RootNode);
 	int s = SizeOfBinaryTree(RootNode);
 	std::cout << "\nSize : " << s << std::endl;
+	int max = MaximumFromBTree(RootNode);
+	std::cout << "Maximum From Tree : " << max << std::endl;
 
 	return 0;
 }
