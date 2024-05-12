@@ -63,7 +63,13 @@ int main() {
 	PreorderTree(RootNode);
 	std::cout << "\nPostorder : " << std::endl;
 	PostorderTree(RootNode);
-	
+	int h = HeightOfBTree(RootNode);
+	std::cout << "\nHeight : " << h << std::endl;
+	PrintNodesAtKDistance(RootNode, 2);
+	PrintLevelOrderTraversal(RootNode);
+	int s = SizeOfBinaryTree(RootNode);
+	std::cout << "\nSize : " << s << std::endl;
+
 	return 0;
 }
 
